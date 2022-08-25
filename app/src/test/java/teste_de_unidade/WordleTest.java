@@ -84,9 +84,9 @@ public class WordleTest {
     @Test
     public void testRepeat() {
         assertFalse(wordle.repeat(0));
-        //assertFalse(wordle.repeat(-1));
-        //assertTrue(wordle.repeat(1));
-        //assertTrue(wordle.repeat(1000));
+        assertFalse(wordle.repeat(-1));
+        assertTrue(wordle.repeat(1));
+        assertTrue(wordle.repeat(1000));
 
         
     }
