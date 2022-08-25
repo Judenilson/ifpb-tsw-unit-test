@@ -38,50 +38,33 @@ public class WordleTest {
     public void tearDown() {
     }
 
-    /**
-     * Test of getWordle method, of class Wordle.
-     */
     @Test
     public void testGetWordle() {
         ArrayList<String> temp = wordle.listaPalavras(3, 1);
-        assertEquals(wordle.sorteiaPalavra(temp), wordle.getWordle());
-       
+        assertEquals(wordle.sorteiaPalavra(temp), wordle.getWordle());       
     }
 
-    /**
-     * Test of palpiteValido method, of class Wordle.
-     */
     @Test
     public void testPalpiteValido() {
-        ArrayList<String> temp = new ArrayList<String>();
-        temp.add("amor");
-        temp.add("AMOR");
-        temp.add("café");
-        temp.add("cafe");
-        temp.add("campo");
+        ArrayList<String> temp = wordle.listaPalavras(4, 1);
         assertFalse(wordle.palpiteValido("aaaa", temp));
         assertFalse(wordle.palpiteValido("arc0", temp));
         assertTrue(wordle.palpiteValido("amor", temp));
         assertTrue(wordle.palpiteValido("AMOR", temp));
         assertTrue(wordle.palpiteValido("café", temp));
-        assertTrue(wordle.palpiteValido("cafe", temp));
-        assertFalse(wordle.palpiteValido("lobo", temp));
-        assertFalse(wordle.palpiteValido("avestruz", temp));
-        assertTrue(wordle.palpiteValido("campo", temp));
+        assertTrue(wordle.palpiteValido("cafe", temp));        
 
+        ArrayList<String> tempCinco = wordle.listaPalavras(5, 1);
+        assertFalse(wordle.palpiteValido("lobo", tempCinco));
+        assertFalse(wordle.palpiteValido("avestruz", tempCinco));
+        assertTrue(wordle.palpiteValido("campo", tempCinco));
     }
 
-    /**
-     * Test of palpiteWord method, of class Wordle.
-     */
     @Test
     public void testPalpiteWord() {
         //não existe retorno válido no método.
     }
 
-    /**
-     * Test of repeat method, of class Wordle.
-     */
     @Test
     public void testRepeat() {
         assertFalse(wordle.repeat(0));
@@ -90,71 +73,61 @@ public class WordleTest {
         assertTrue(wordle.repeat(1000));        
     }
 
-    /**
-     * Test of endGame method, of class Wordle.
-     */
     @Test
     public void testEndGame() {
         //não existe retorno válido no método.
     }
 
-    /**
-     * Test of printTabela method, of class Wordle.
-     */
     @Test
     public void testPrintTabela() {
         //não existe retorno válido no método.
     }
 
-    /**
-     * Test of printKeyboard method, of class Wordle.
-     */
     @Test
     public void testPrintKeyboard() {
        //não existe retorno válido no método.
     }
 
-    /**
-     * Test of checkSize method, of class Wordle.
-     */
     @Test
     public void testCheckSize() {
         assertFalse(wordle.checkSize(1));
         assertFalse(wordle.checkSize(0));
         assertFalse(wordle.checkSize(-1));
         assertFalse(wordle.checkSize(24));
-        assertTrue(wordle.checkSize(2));       
+        assertTrue(wordle.checkSize(2));
     }
 
-    /**
-     * Test of listaPalavras method, of class Wordle.
-     */
     @Test
     public void testListaPalavras() throws Exception {
         //não existe retorno válido no método.
     }
 
-    /**
-     * Test of sorteiaPalavra method, of class Wordle.
-     */
     @Test
     public void testSorteiaPalavra() {
         ArrayList<String> temp = wordle.listaPalavras(6, 1);
         String palavraAnterior = wordle.sorteiaPalavra(temp);
         String palavraAtual;
         int cont=0;
-        for (int i = 0; i <= 50; i++) {
+        for (int i = 0; i < 3; i++) {
             palavraAtual = wordle.sorteiaPalavra(temp);
             if (palavraAnterior.equals(palavraAtual)){
                 cont++;                
             }
-            else{
-                cont--;
+        }
+        assertNotEquals(3, cont);
+            
+        ArrayList<String> tempX = new ArrayList<String>();
+        tempX.add("carro");
+        palavraAnterior = wordle.sorteiaPalavra(tempX);
+        cont=0;
+        for (int i = 0; i < 3; i++) {
+            palavraAtual = wordle.sorteiaPalavra(tempX);
+            if (palavraAnterior.equals(palavraAtual)){
+                cont++;                
             }
         }
-        System.out.println(cont);
-        assertEquals(-51, cont);
-        
+        assertEquals(3, cont);
+
     }
 
     private void IOException() {

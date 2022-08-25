@@ -20,13 +20,12 @@ public class App {
         Wordle W = new Wordle();//novo construtor
         System.out.println("Davi Juvêncio\n");
         System.out.println("Projeto:\n");
-        System.out.println("Adivinhe Se Puder!\n");//tive que alterar para println
-        System.out.println("Digite o Tamanho da Palavra: ");//tive que alterar para println
+        System.out.println("Adivinhe Se Puder!\n");//EQUIPE DE TESTE: alterado para println
+        System.out.println("Digite o Tamanho da Palavra: ");//EQUIPE DE TESTE: alterado para println
         tamanhoPalavra = in.nextInt();
-        /*
-    Vou modularizar a verificação do tamanho da palavra
-    função checkSize(int size) na classe Wordle
-         */
+        
+        //EQUIPE DE TESTE: CÓDIGO ORIGINAL LEVADO PARA A CLASSE Wordle.java
+         
         while (true) {
             if (W.checkSize(tamanhoPalavra)) {
                 break;
@@ -36,22 +35,23 @@ public class App {
         }
 
         /*
-    CÓDIGO ORIGINAL:   
+    //EQUIPE DE TESTE: CÓDIGO ORIGINAL LEVADO PARA A CLASSE Wordle.java   
     while (tamanhoPalavra < 2 || tamanhoPalavra > 23){
       System.out.print("Digite o Tamanho Entre 2 e 23 da Palavra: ");
       tamanhoPalavra = in.nextInt();
     }*/
-        System.out.println("Digite a Quantidade de Tentativas: ");//tive que alterar para println
+
+        System.out.println("Digite a Quantidade de Tentativas: ");//EQUIPE DE TESTE: alterado para println
         tentativas = in.nextInt();
 
-        //W = new Wordle(tamanhoPalavra,tentativas);CÃ“DIGO ORIGINAL: 
+        //W = new Wordle(tamanhoPalavra,tentativas); CÓDIGO ORIGINAL: 
         listaPalavras = W.listaPalavras(tamanhoPalavra, tentativas);
         while (W.repeat(tentativas)) {
-            System.out.println("Digite sua Palavra: ");//tive que alterar para println
+            System.out.println("Digite sua Palavra: ");//EQUIPE DE TESTE: alterado para println
             palpite = in.next();
             while (!W.palpiteValido(palpite, listaPalavras)) {
                 System.out.println("Não é uma palavra de " + tamanhoPalavra + 
-                        " letras válida.\nDigite sua Palavra: ");
+                        " letras válida.\nDigite sua Palavra: "); //EQUIPE DE TESTE: alterado para println
                 palpite = in.next();
             }
             W.palpiteWord(palpite);

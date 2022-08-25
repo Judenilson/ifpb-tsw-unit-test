@@ -22,8 +22,10 @@ public class Wordle {
 
     /**
      * Inicializa a lista de palavras. 
-     * MODULARIZADO EM listaPalavras(int tamanhoPalavra, int tentativas); **/
+    **/
+// //EQUIPE DE TESTE: MODULARIZADO EM listaPalavras(int tamanhoPalavra, int tentativas); **/
      
+//    CONSTRUTOR ANTIGO
 //    public Wordle(int tamanhoPalavra, int tentativas) throws IOException {
 //        listaPalavras = new ArrayList<>();
 //        in = new Scanner(System.in);
@@ -44,7 +46,7 @@ public class Wordle {
 //        wordle = listaPalavras.get(rand.nextInt(listaPalavras.size())).toUpperCase();
 //    }
 
-    //NOVO CONSTRUTUOR   
+    //EQUIPE DE TESTE: NOVO CONSTRUTOR   
     public Wordle(){    
     }
     
@@ -161,7 +163,7 @@ public class Wordle {
         System.out.println("\n");
     }
     
-    //NOVA FUNÇÃO
+    //EQUIPE DE TESTE: TRAZIDA DA MAIN PARA PODER TESTAR MODULARIZADO
     public boolean checkSize(int size) {
         if (size < 2 || size > 23) {
             System.out.print("Digite o Tamanho Entre 2 e 23 da Palavra: ");
@@ -171,8 +173,10 @@ public class Wordle {
     }
     
     /**
-     * Inicializa a lista de palavras. NOVA FUNÇÃO RETIRADA DO ANTIGO CONSTRUTOR
+     * Inicializa a lista de palavras. 
      */
+
+    //EQUIPE DE TESTE: NOVA FUNÇÃO RETIRADA DO ANTIGO CONSTRUTOR
     public ArrayList<String> listaPalavras(int tamanhoPalavra, int tentativas) {
         listaPalavras = new ArrayList<>();
         try {
@@ -198,9 +202,11 @@ public class Wordle {
         sorteiaPalavra(listaPalavras);
         return listaPalavras;
 
+        //EQUIPE DE TESTE: Linha removida inserida na função sorteiaPalavra()
         //wordle = listaPalavras.get(rand.nextInt(listaPalavras.size())).toUpperCase();    
     }
     
+    //EQUIPE DE TESTE: NOVA FUNÇÃO PARA TESTAR O SORTEIO
     public String sorteiaPalavra(ArrayList<String> listaPalavras){
         
         wordle = listaPalavras.get(rand.nextInt(listaPalavras.size())).toUpperCase();
