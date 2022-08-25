@@ -121,10 +121,10 @@ public class WordleTest {
     @Test
     public void testCheckSize() {
         assertFalse(wordle.checkSize(1));
-        //assertFalse(wordle.checkSize(0));
-        //assertFalse(wordle.checkSize(-1));
-        //assertFalse(wordle.checkSize(24));
-        //assertTrue(wordle.checkSize(2));       
+        assertFalse(wordle.checkSize(0));
+        assertFalse(wordle.checkSize(-1));
+        assertFalse(wordle.checkSize(24));
+        assertTrue(wordle.checkSize(2));       
     }
 
     /**
