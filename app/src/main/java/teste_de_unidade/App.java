@@ -18,14 +18,14 @@ public class App {
         ArrayList<String> listaPalavras;
 
         Wordle W = new Wordle();//novo construtor
-        System.out.println("Davi Juvï¿½ncio\n");
+        System.out.println("Davi Juvêncio\n");
         System.out.println("Projeto:\n");
         System.out.println("Adivinhe Se Puder!\n");//tive que alterar para println
         System.out.println("Digite o Tamanho da Palavra: ");//tive que alterar para println
         tamanhoPalavra = in.nextInt();
         /*
-    Vou modularizar a verificaï¿½ï¿½o do tamanho da palavra
-    funï¿½ï¿½o checkSize(int size) na classe Wordle
+    Vou modularizar a verificação do tamanho da palavra
+    função checkSize(int size) na classe Wordle
          */
         while (true) {
             if (W.checkSize(tamanhoPalavra)) {
@@ -36,7 +36,7 @@ public class App {
         }
 
         /*
-    Cï¿½DIGO ORIGINAL:   
+    CÓDIGO ORIGINAL:   
     while (tamanhoPalavra < 2 || tamanhoPalavra > 23){
       System.out.print("Digite o Tamanho Entre 2 e 23 da Palavra: ");
       tamanhoPalavra = in.nextInt();
@@ -50,8 +50,8 @@ public class App {
             System.out.println("Digite sua Palavra: ");//tive que alterar para println
             palpite = in.next();
             while (!W.palpiteValido(palpite, listaPalavras)) {
-                System.out.println("Nï¿½o ï¿½ uma palavra de " + tamanhoPalavra + 
-                        " letras vï¿½lida.\nDigite sua Palavra: ");
+                System.out.println("Não é uma palavra de " + tamanhoPalavra + 
+                        " letras válida.\nDigite sua Palavra: ");
                 palpite = in.next();
             }
             W.palpiteWord(palpite);

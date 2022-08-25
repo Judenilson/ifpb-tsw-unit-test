@@ -57,14 +57,14 @@ public class WordleTest {
         ArrayList<String> temp = new ArrayList<String>();
         temp.add("amor");
         temp.add("AMOR");
-        temp.add("cafï¿½");
+        temp.add("café");
         temp.add("cafe");
         temp.add("campo");
         assertFalse(wordle.palpiteValido("aaaa", temp));
         assertFalse(wordle.palpiteValido("arc0", temp));
         assertTrue(wordle.palpiteValido("amor", temp));
         assertTrue(wordle.palpiteValido("AMOR", temp));
-        assertTrue(wordle.palpiteValido("cafï¿½", temp));
+        assertTrue(wordle.palpiteValido("café", temp));
         assertTrue(wordle.palpiteValido("cafe", temp));
         assertFalse(wordle.palpiteValido("lobo", temp));
         assertFalse(wordle.palpiteValido("avestruz", temp));
