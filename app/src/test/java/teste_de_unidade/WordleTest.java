@@ -54,20 +54,22 @@ public class WordleTest {
      */
     @Test
     public void testPalpiteValido() {
-        ArrayList<String> temp = wordle.listaPalavras(5, 1);
-        //assertFalse(wordle.palpiteValido("aaaa", temp));
-        //assertFalse(wordle.palpiteValido("arc0", temp));
-        //assertTrue(wordle.palpiteValido("amor", temp));
-        //assertTrue(wordle.palpiteValido("AMOR", temp));
-        //assertTrue(wordle.palpiteValido("café", temp));
-        //assertTrue(wordle.palpiteValido("cafe", temp));
-        
-        //CONFIGURAR COM TAMANHO 5:
-        //assertFalse(wordle.palpiteValido("lobo", temp));
-        //assertFalse(wordle.palpiteValido("avestruz", temp));
+        ArrayList<String> temp = new ArrayList<String>();
+        temp.add("amor");
+        temp.add("AMOR");
+        temp.add("caf�");
+        temp.add("cafe");
+        temp.add("campo");
+        assertFalse(wordle.palpiteValido("aaaa", temp));
+        assertFalse(wordle.palpiteValido("arc0", temp));
+        assertTrue(wordle.palpiteValido("amor", temp));
+        assertTrue(wordle.palpiteValido("AMOR", temp));
+        assertTrue(wordle.palpiteValido("caf�", temp));
+        assertTrue(wordle.palpiteValido("cafe", temp));
+        assertFalse(wordle.palpiteValido("lobo", temp));
+        assertFalse(wordle.palpiteValido("avestruz", temp));
         assertTrue(wordle.palpiteValido("campo", temp));
-        
-       
+
     }
 
     /**
