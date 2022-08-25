@@ -50,9 +50,9 @@ public class Wordle {
     
     /**
      * Retorna a palavra wordle
-     *
      * @return String wordle
      */
+
     public String getWordle() {
         return wordle;
     }
@@ -62,9 +62,8 @@ public class Wordle {
     }
 
     /**
-     * Verifica se a entrada fornecida é um palpite válido
-     *
-     * @return Booleano válido
+     * Verifica se a entrada fornecida � um palpite v�lido
+     * @return Booleano v�lido
      */
     public boolean palpiteValido(String palpite, ArrayList<String> listaPalavras) {
         for (int i = 0; i < listaPalavras.size(); i++) {
@@ -76,7 +75,7 @@ public class Wordle {
     }
 
     /**
-     * Adiciona a palavra à tabela e verifica se é a solução
+     * Adiciona a palavra a tabela e verifica se � a solu��o
      */
     public void palpiteWord(String palpite) {
         for (int i = 0; i <= (wordle.length() - 1); i++) {
@@ -90,8 +89,7 @@ public class Wordle {
 
     /**
      * Decidir se permite outro palpite
-     *
-     * @return boolean de repetição
+     * @return boolean de repeti��o
      */
     public boolean repeat(int tentativas) {
         if (palpiteCount >= tentativas) {
@@ -103,7 +101,7 @@ public class Wordle {
     }
 
     /**
-     * Imprime "Vencedor!" se o usuário adivinhou a palavra correta Senão
+     * Imprime "Vencedor!" se o usu�rio adivinhou a palavra correta se n�o
      * imprime a palavra correta
      */
     public void endGame() {
@@ -115,7 +113,7 @@ public class Wordle {
     }
 
     /**
-     * Imprime a tabela de adivinhações anteriores
+     * Imprime a tabela de adivinha��es anteriores
      */
     public void printTabela(int tentativas) {
         String temp = "";
@@ -163,7 +161,7 @@ public class Wordle {
         System.out.println("\n");
     }
     
-    //NOVA FUNÇÃO
+    //NOVA FUN��O
     public boolean checkSize(int size) {
         if (size < 2 || size > 23) {
             System.out.print("Digite o Tamanho Entre 2 e 23 da Palavra: ");
@@ -173,7 +171,7 @@ public class Wordle {
     }
     
     /**
-     * Inicializa a lista de palavras. NOVA FUNÇÃO RETIRADA DO ANTIGO CONSTRUTOR
+     * Inicializa a lista de palavras. NOVA FUN��O RETIRADA DO ANTIGO CONSTRUTOR
      */
     public ArrayList<String> listaPalavras(int tamanhoPalavra, int tentativas) {
         listaPalavras = new ArrayList<>();
