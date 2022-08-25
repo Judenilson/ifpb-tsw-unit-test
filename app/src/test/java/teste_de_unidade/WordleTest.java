@@ -32,7 +32,6 @@ public class WordleTest {
     @BeforeEach
     public void setUp() throws IOException {
         wordle = new Wordle();
-
     }
     
     @AfterEach
@@ -77,7 +76,7 @@ public class WordleTest {
      */
     @Test
     public void testPalpiteWord() {
-        
+        //não existe retorno válido no método.
     }
 
     /**
@@ -88,9 +87,7 @@ public class WordleTest {
         assertFalse(wordle.repeat(0));
         assertFalse(wordle.repeat(-1));
         assertTrue(wordle.repeat(1));
-        assertTrue(wordle.repeat(1000));
-
-        
+        assertTrue(wordle.repeat(1000));        
     }
 
     /**
@@ -98,7 +95,7 @@ public class WordleTest {
      */
     @Test
     public void testEndGame() {
-       
+        //não existe retorno válido no método.
     }
 
     /**
@@ -106,7 +103,7 @@ public class WordleTest {
      */
     @Test
     public void testPrintTabela() {
-       
+        //não existe retorno válido no método.
     }
 
     /**
@@ -114,7 +111,7 @@ public class WordleTest {
      */
     @Test
     public void testPrintKeyboard() {
-       
+       //não existe retorno válido no método.
     }
 
     /**
@@ -134,7 +131,7 @@ public class WordleTest {
      */
     @Test
     public void testListaPalavras() throws Exception {
-        
+        //não existe retorno válido no método.
     }
 
     /**
